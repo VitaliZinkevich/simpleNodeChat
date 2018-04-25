@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>nodeJS served Chat</title>
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+</head>
+
+<body>
+
+  <div class="container">
+<div class="row">
+
+  <div class="col-2">
+
+  </div>
+  <div class="col-8">
+    <div class="chat">
+    <input type="text" id="name" placeholder="Enter your name">
+
+    <div class="messages">
+
+    <!-- messages here-->
+    <p>messages here</p>
+    <p>messages here</p>
+
+
+    </div>
+
+    <textarea id="enterMsg" placeholder="Enter your message" rows="3" cols="60"></textarea>
+
+    </div>
+    <div class="chatMeg">
+      Chat status: <span id="status">STATUS</span>
+    </div>
+
+  </div>
+  <div class="col-2">
+
+  </div>
+
+</div>
+
+
+
+
+  </div>
+
+
+  <script src='http://127.0.0.1:8080/socket.io/socket.io.js'></script>
+
+  <script src='client.js'></script>
+</body>
+
+</html>
