@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>nodeJS served Chat</title>
-<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="./main.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 </head>
 
@@ -15,27 +15,30 @@
   <div class="col-2">
 
   </div>
-  <div class="col-8">
+
+  <div class="col-8 d-flex flex-column">
+
     <div class="chat">
     <input type="text" id="name" placeholder="Enter your name">
 
     <div class="messages">
-
     <!-- messages here-->
-    <p>messages here</p>
-    <p>messages here</p>
+    </div>
 
+    <textarea id="enterMsg" placeholder="Enter your message. Hit Enter to send" ></textarea>
 
     </div>
 
-    <textarea id="enterMsg" placeholder="Enter your message" rows="3" cols="60"></textarea>
+    <div class="chatstatus d-flex-inline">
 
-    </div>
-    <div class="chatMeg">
-      Chat status: <span id="status">STATUS</span>
+      <p class="alert alert-primary">Chat status:  </p>
+
+      <span class="p-2" id="status"></span>
+
     </div>
 
   </div>
+
   <div class="col-2">
 
   </div>

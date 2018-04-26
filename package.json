@@ -10,6 +10,7 @@
   "author": "zinkevich",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.16.3",
     "mongodb": "^3.0.7",
     "socket.io": "^2.1.0"
   }

@@ -1,0 +1,27 @@
+.messages {
+  overflow-y: scroll;
+  max-height: 400px;
+  min-height: 400px;
+
+}
+
+span {
+  display: inline-block;
+  width: 100%;
+}
+
+input,
+textarea,
+.chat {
+  width: 100%;
+  margin: 15px 0px 15px 0px
+}
+
+.onemessage {
+  margin: 15px 0px 15px 0px;
+
+}
+
+#status {
+  border : 2px solid black
+}
