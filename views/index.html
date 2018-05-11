@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>nodeJS served Chat</title>
+<link rel="stylesheet" href="./main.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+<script type="text/javascript" src='users.js'></script>
+</head>
+
+<body>
+
+  {% if error %}
+
+<div class="container">
+<div class="row">
+
+  <div class="col-12">
+    <h3 class="error"> {{ error.msg }} </h3>
+    <div class="login-page">
+        <div class="form">
+
+            <div style="margin-top: 18px;">
+
+                <form class="register" 
+                id='reg' method="post" style='display:none;' onsubmit="submitFunc(event)">
+                    <input type="text" name="username" placeholder="username"/>
+                    <input type="password" name="password" placeholder="password"/>
+                    <button type="submit">create account</button>
+                    <p class="message">Already registered? <a
+                      onclick='changeForms()' href="#">Sign In</a></p>
+                </form>
+
+                <form class="login" method="post" id='log'
+                onsubmit="submitFunc(event)">
+                    <input type="text" name="username" placeholder="username"/>
+                    <input type="password" name="password" placeholder="password"/>
+                    <button type="submit">login</button>
+                    <p class="message">Not registered? <a onclick='changeForms()'href="#">Create an account</a></p>
+                </form>
+
+            </div>
+        </div>
+    </div>
+  </div>
+
+</div>
+</div>
+{% else %}
+
+
+
+
+
+  <div class="container">
+<div class="row">
+
+
+
+
+
+
+  <div class="col-2">
+
+  </div>
+
+  <div class="col-8 d-flex flex-column">
+
+    <div class="chat">
+    <input type="text" id="name" placeholder="Enter your name">
+    <p>{{username}}</p>
+    <div class="messages">
+    <!-- messages here-->
+    </div>
+
+    <textarea id="enterMsg" placeholder="Enter your message. Hit Enter to send" ></textarea>
+
+    </div>
+
+    <div class="chatstatus d-flex-inline">
+
+      <p class="alert alert-primary">Chat status:  </p>
+
+      <span class="p-2" id="status"></span>
+
+    </div>
+
+  </div>
+
+  <div class="col-2">
+
+  </div>
+
+</div>
+
+
+
+
+  </div>
+
+
+  <script src='http://127.0.0.1:8080/socket.io/socket.io.js'></script>
+
+  <script src='client.js'></script>
+  {% endif %}
+</body>
+
+</html>
