@@ -8,7 +8,7 @@ window.onload = (function (){
   // get reuired nodes
   spanStatus = getNode('#status')
   textarea = getNode ('#enterMsg')
-  chatName = getNode ('#name')
+  chatName = getNode ('#user')
   messageDiv = getNode('.messages')
 
 
@@ -55,15 +55,17 @@ if (socket != undefined) {
   // listen for output enterMsg
 
   socket.on ('output', function (data){
-console.log (data)
+
     if (data.length) {
-      // loop thrue come msg
+
 
     for (var i = 0 ; i < data.length; i++) {
 
+
+
       var oneMessage = document.createElement ('div')
       oneMessage.setAttribute('class', 'onemessage alert alert-dark')
-      oneMessage.innerHTML = '<strong> Name: '+data[i].name+'</strong>'+ '<br>'+ data[i].message
+      oneMessage.innerHTML = '<strong>'+data[i].date+'</strong><strong> Name: '+data[i].name+'</strong>'+ '<br>'+ data[i].message
             messageDiv.appendChild (oneMessage)
       messageDiv.insertBefore (oneMessage, messageDiv.firstChild)
 
@@ -98,8 +100,8 @@ console.log (data)
 
   // listen for key down
     textarea.addEventListener ('keydown',function (event){
-        var self = this,
-            name = chatName.value
+        var self = this
+            name = chatName.textContent
 
 
 
@@ -107,6 +109,7 @@ console.log (data)
             socket.emit ('enterMsg', {
               name: name,
               message: self.value
+
         })
 
         event.preventDefault()

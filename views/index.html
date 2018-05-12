@@ -16,13 +16,13 @@
 <div class="row">
 
   <div class="col-12">
-    <h3 class="error"> {{ error.msg }} </h3>
+    <h3 class="error"> {{ error }} </h3>
     <div class="login-page">
         <div class="form">
 
             <div style="margin-top: 18px;">
 
-                <form class="register" 
+                <form class="register"
                 id='reg' method="post" style='display:none;' onsubmit="submitFunc(event)">
                     <input type="text" name="username" placeholder="username"/>
                     <input type="password" name="password" placeholder="password"/>
@@ -48,17 +48,8 @@
 </div>
 {% else %}
 
-
-
-
-
-  <div class="container">
+<div class="container">
 <div class="row">
-
-
-
-
-
 
   <div class="col-2">
 
@@ -67,8 +58,10 @@
   <div class="col-8 d-flex flex-column">
 
     <div class="chat">
-    <input type="text" id="name" placeholder="Enter your name">
-    <p>{{username}}</p>
+    <!--<input type="text" id="name" placeholder="Enter your name"> -->
+    USERNAME :
+    <p id="user"> {{username}}</p>
+    <a onclick="logout()" href="#">logout</a>
     <div class="messages">
     <!-- messages here-->
     </div>
